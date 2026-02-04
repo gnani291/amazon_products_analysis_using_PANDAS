@@ -1,0 +1,9 @@
+This code performs data cleaning, analysis, and visualization on an Amazon product dataset to extract meaningful business insights. It begins by importing essential libraries such as Pandas for data manipulation, Matplotlib and Seaborn for data visualization, and Google Colab’s file upload utility to load the dataset. The Amazon CSV file is then read into a DataFrame, making it ready for processing.
+
+A major part of the code focuses on cleaning numeric columns such as discounted price, actual price, discount percentage, rating, and rating count. Since these columns may contain symbols like the rupee sign (₹), commas, and percentage signs (%), the code removes these unwanted characters and converts the values into numeric format. Any invalid or missing values are safely handled using type conversion with error handling, ensuring accurate calculations and visualizations.
+
+After cleaning the data, the code analyzes product performance by grouping products based on their names and calculating the total rating count. Rating count is used as a proxy for sales and popularity. The top ten products with the highest engagement are then displayed using a bar chart. Similarly, the code groups products by category to determine which categories receive the highest customer interaction and visualizes the top-performing categories.
+
+The script also examines discount trends by calculating the average discount percentage for each category. This helps in understanding pricing strategies and promotional patterns across different product groups. The results are displayed using a horizontal bar chart for easy comparison.
+
+Finally, a pivot table is created to compute the average rating for each category. This provides insights into customer satisfaction levels and helps compare the quality perception of products across categories. Overall, this code is useful for e-commerce data analysis, market research, and business decision-making.
