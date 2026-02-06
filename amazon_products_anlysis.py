@@ -16,7 +16,7 @@ for col in ['discounted_price', 'actual_price', 'discount_percentage', 'rating',
                          .str.strip())
     df[col] = pd.to_numeric(df[col], errors='coerce')
 
-# ---- Top 10 products by number of ratings (sales proxy) ----
+#Top 10 products by number of ratings
 top_products = df.groupby("product_name")['rating_count'].sum().sort_values(ascending=False).head(10)
 
 plt.figure(figsize=(10,5))
@@ -47,3 +47,4 @@ plt.show()
 # ---- Pivot: Category vs Average Rating ----
 pivot = pd.pivot_table(df, index='category', values='rating', aggfunc='mean')
 print(pivot.head())
+
