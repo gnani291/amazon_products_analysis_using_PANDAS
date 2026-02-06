@@ -7,7 +7,7 @@ import seaborn as sns
 # Load dataset
 df = pd.read_csv("amazon.csv")
 
-# ---- Clean numeric columns ----
+#Clean numeric columns
 for col in ['discounted_price', 'actual_price', 'discount_percentage', 'rating', 'rating_count']:
     df[col] = (df[col].astype(str)
                          .str.replace('₹','', regex=True)
@@ -47,4 +47,5 @@ plt.show()
 # ---- Pivot: Category vs Average Rating ----
 pivot = pd.pivot_table(df, index='category', values='rating', aggfunc='mean')
 print(pivot.head())
+
 
