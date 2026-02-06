@@ -26,7 +26,7 @@ plt.xlabel("Rating Count")
 plt.ylabel("Product")
 plt.show()
 
-# ---- Sales (rating_count) by category ----
+#Sales (rating_count) by category
 category_sales = df.groupby("category")['rating_count'].sum().sort_values(ascending=False).head(10)
 
 plt.figure(figsize=(10,5))
@@ -35,7 +35,7 @@ plt.title("Top 10 Categories by Rating Count (Sales Proxy)")
 plt.ylabel("Rating Count")
 plt.show()
 
-# ---- Average discount per category ----
+#Average discount per category
 avg_discount = df.groupby("category")['discount_percentage'].mean().sort_values(ascending=False).head(10)
 
 plt.figure(figsize=(10,5))
@@ -47,5 +47,6 @@ plt.show()
 # ---- Pivot: Category vs Average Rating ----
 pivot = pd.pivot_table(df, index='category', values='rating', aggfunc='mean')
 print(pivot.head())
+
 
 
