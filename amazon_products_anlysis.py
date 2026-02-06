@@ -44,9 +44,10 @@ plt.title("Average Discount by Category")
 plt.xlabel("Discount %")
 plt.show()
 
-# ---- Pivot: Category vs Average Rating ----
+#Pivot: Category vs Average Rating
 pivot = pd.pivot_table(df, index='category', values='rating', aggfunc='mean')
 print(pivot.head())
+
 
 
 
