@@ -4,7 +4,7 @@ uploaded=files.upload()
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Load dataset
+#Load dataset
 df = pd.read_csv("amazon.csv")
 
 #Clean numeric columns
@@ -44,9 +44,10 @@ plt.title("Average Discount by Category")
 plt.xlabel("Discount %")
 plt.show()
 
-#Pivot: Category vs Average Rating
+#Category vs Average Rating
 pivot = pd.pivot_table(df, index='category', values='rating', aggfunc='mean')
 print(pivot.head())
+
 
 
 
